@@ -21,16 +21,56 @@ body {
     font-style: normal;
 }
 
+.text-normal {
+    font-size: 0.8125rem;
+    line-height: 16px;
+}
+
+.text-small {
+    font-size: 0.75rem;
+    line-height: 15px;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.bg-dark {
+    background-color: #000;
+}
+
+.fc-white {
+    color: #fff
+}
+
 .app {
     width: 375px;
+    margin: 0 auto;
 }
 
 header {
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 16px;
+
+    border-bottom: 1px solid #d4d4d4;
 }
 
-main {
-    margin: 0 auto;
+.user-info {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+    margin: 10px 17px 10px 10px;
+}
+
+.user-fullname {
+    margin: 0;
+}
+
+.user-location {
+    margin: 0;
 }
 
 img {
@@ -47,6 +87,33 @@ img {
     border-radius: 50%;
 }
 
-.user-fullname {
-    font-size: 0.8125rem;
+.post-image {
+    width: 375px;
+    height: 375px;
+}
+
+.post-body {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+    padding: 21px 19px 16px 13px;
+}
+
+.icons-container {
+    display: flex;
+    gap: 20px;
+
+    max-height: 24px;
+}
+
+.like-icon,
+.comment-icon,
+.share-icon {
+    width: 24px;
+    height: auto;
+}
+
+.hover-opacity:hover {
+    opacity: 0.75;
 }
