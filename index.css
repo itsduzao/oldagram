@@ -6,6 +6,8 @@
 
     --primary-bg-color: light-dark(#f5f5f5, #000000);
 
+    --primary-border-color: #363636;
+
     --notification-red: #e41e3f;
 }
 
@@ -58,6 +60,10 @@ body {
     color: var(--secondary-font-color);
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 .app {
     width: 375px;
     margin: 0 auto;
@@ -69,7 +75,12 @@ header {
 
     padding: 16px;
 
-    border-bottom: 1px solid #363636;
+    border-bottom: 1px solid var(--primary-border-color);
+}
+
+.post-container {
+    position: relative;
+    margin-bottom: 50px;
 }
 
 .user-info {
@@ -97,8 +108,8 @@ img {
 }
 
 .avatar {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: auto;
     border-radius: 50%;
 }
 
@@ -131,4 +142,32 @@ img {
 
 .hover-opacity:hover {
     opacity: 0.75;
+}
+
+.animation-expand {
+    transition: transform 200ms cubic-bezier(0.17, 0.17, 0, 1);
+}
+
+.animation-expand:active {
+    transform: scale(0.95);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 50px;
+    width: 375px;
+
+    position: fixed;
+    bottom: 0;
+
+    border-top: 1px solid var(--primary-border-color);
+}
+
+.app-user-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
 }
