@@ -46,7 +46,7 @@ function createPostElement(data) {
             </section>
             <section class="post-body">
                 <div class="icons-container">
-                    <div class="like-icon primary-font-color hover-opacity" tabindex="0">
+                    <div class="like-icon primary-font-color hover-opacity pointer" tabindex="0">
                         <svg role="img" aria-labelledby="like-icon-title" width="24" height="24" viewBox="0 0 27 25"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <title id="like-icon-title">Like</title>
@@ -55,7 +55,7 @@ function createPostElement(data) {
                                 stroke="currentcolor" stroke-width="2.32996" />
                         </svg>
                     </div>
-                    <div class="comment-icon primary-font-color hover-opacity" tabindex="0">
+                    <div class="comment-icon primary-font-color hover-opacity pointer" tabindex="0">
                         <svg aria-labelledby="comment-icon-title" fill="currentColor" height="24" role="img"
                             viewBox="0 0 24 24" width="24">
                             <title id="comment-icon-title">Comment</title>
@@ -63,7 +63,7 @@ function createPostElement(data) {
                                 stroke-linejoin="round" stroke-width="2"></path>
                         </svg>
                     </div>
-                    <div class="share-icon primary-font-color hover-opacity" tabindex="0">
+                    <div class="share-icon primary-font-color hover-opacity pointer" tabindex="0">
                         <svg aria-labelledby="share-icon-title" width="24" height="24" viewBox="0 0 24 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <title id="share-icon-title">Share</title>
