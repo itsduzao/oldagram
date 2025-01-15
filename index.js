@@ -114,13 +114,15 @@ function createPostElement(data) {
                             </svg>
                         </div>
                     </div>
-                    <div class="primary-font-color save-post-icon interaction-opacity pointer" tabindex="0">
-                        <svg aria-labelledby="save-post-icon-title" fill="currentColor" height="24" role="img"
-                            viewBox="0 0 24 24" width="24">
-                            <title id="save-post-icon-title">Save</title>
-                            <polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
-                        </svg>
+                    <div class="save-post-container">
+                        <div class="primary-font-color save-post-icon interaction-opacity pointer" tabindex="0">
+                            <svg aria-labelledby="save-post-icon-title" fill="currentColor" height="24" role="img"
+                                viewBox="0 0 24 24" width="24">
+                                <title id="save-post-icon-title">Save</title>
+                                <polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
+                            </svg>
+                        </div>
                     </div>
                 </div>
                 <p class="likes-counter ss-normal text-normal m-0 primary-font-color">
@@ -153,21 +155,31 @@ function renderPosts(posts) {
 renderPosts(posts)
 
 function setSvgIconColor(element, color) {
-  if (hasChildElement(element, 'svg')) {
-    const path = element.querySelector('path')
-
-    path.setAttribute('fill', color)
-    path.setAttribute('stroke', color)
-  }
+  if (!hasChildElement(element, 'svg')) return
+  const svg = element.querySelector('svg')
+  const svgNodesWithStrokeOrFill = getSvgChildrenWithStrokeOrFill(svg)
+  svgNodesWithStrokeOrFill.forEach(child => {
+    child.setAttribute('fill', color)
+    child.setAttribute('stroke', color)
+  })
 }
 
 function removeSvgIconColor(element, color) {
-  if (hasChildElement(element, 'svg')) {
-    const path = element.querySelector('path')
+  if (!hasChildElement(element, 'svg')) return
+  const svg = element.querySelector('svg')
+  const svgNodesWithStrokeOrFill = getSvgChildrenWithStrokeOrFill(svg)
+  svgNodesWithStrokeOrFill.forEach(child => {
+    child.setAttribute('fill', 'none')
+    child.setAttribute('stroke', color)
+  })
+}
 
-    path.removeAttribute('fill')
-    path.setAttribute('stroke', color)
-  }
+function getSvgChildrenWithStrokeOrFill(svg) {
+  const children = Array.from(svg.querySelectorAll('*'))
+  const hasStrokeOrFill = children.filter(
+    child => child.hasAttribute('stroke') || child.hasAttribute('fill')
+  )
+  return hasStrokeOrFill
 }
 
 function hasChildElement(parent, childSelector) {
@@ -177,6 +189,7 @@ function hasChildElement(parent, childSelector) {
 function setupEventListeners() {
   doubleClickPostHandler()
   likeIconClickHandler()
+  savePostClickHandler()
 }
 
 function doubleClickPostHandler() {
@@ -193,6 +206,7 @@ function doubleClickPostHandler() {
 function likeIconClickHandler() {
   document.addEventListener('click', event => {
     const likeIcon = event.target.closest('.like-icon')
+
     if (!likeIcon) return
 
     const isLiked = likeIcon.classList.contains('liked')
@@ -209,6 +223,29 @@ function removeLikeStatus(likeIcon) {
 function setLikeStatus(likeIcon) {
   setSvgIconColor(likeIcon, 'var(--notification-red)')
   likeIcon.classList.add('liked')
+}
+
+function savePostClickHandler() {
+  document.addEventListener('click', event => {
+    console.log(event.target)
+    const savePostIcon = event.target.closest('.save-post-icon')
+
+    if (!savePostIcon) return
+
+    const isSaved = savePostIcon.classList.contains('saved')
+
+    isSaved ? removeSaveStatus(savePostIcon) : setSaveStatus(savePostIcon)
+  })
+}
+
+function removeSaveStatus(icon) {
+  removeSvgIconColor(icon, 'currentColor')
+  icon.classList.remove('saved')
+}
+
+function setSaveStatus(icon) {
+  setSvgIconColor(icon, 'var(--primary-font-color)')
+  icon.classList.add('saved')
 }
 
 function capitalizeWord(word) {
