@@ -61,7 +61,9 @@ function createPostElement(data) {
   postElement.classList.add('post')
   postElement.innerHTML = `<section class="user-info">
                 <div class="user-info-container">
-                    <img class="avatar" src="${avatar}" alt="${username}'s profile picture">
+                    <div class="avatar-container">
+                        <img class="avatar" src="${avatar}" alt="${username}'s profile picture">
+                    </div>
                     <div class="user-info-wrapper">
                         <a href="/${username}" class="user-fullname primary-font-color text-normal username ss-bold txt-decoration-none pointer">${name}</a>
                         <a href="/explore/locations/${location.id}/${
