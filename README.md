@@ -10,6 +10,10 @@ Stretch goals
 [x] Reorder icons
 [x] Add icons animations (hover, focus, active)
 [x] Add convert date to month dd, year.
-[ ] Add fill save icon on click
-[ ] Add story container
+[x] Add fill save icon on click
+[x] Add story container
+[ ] Add no-story avatar
+[ ] Add plus icon to publish story
+[ ] Add user avatar notification
+[ ] Add dm notification counter
 
