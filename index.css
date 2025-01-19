@@ -135,8 +135,9 @@ header {
     justify-content: center;
     align-items: center;
     border: 2px solid var(--primary-bg-color);
+    border-radius: 50px;
     background-color: var(--notification-red);
-    width: 18px;
+    width: minmax(18px, 36px);
     height: 18px;
 }
 
