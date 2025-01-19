@@ -16,9 +16,8 @@ Stretch goals
 [x] Add plus icon to publish story
 [x] Add red circle over notification
 [x] Add dm notification counter
-
-[ ] Add animation on like action
-
+[x] Fix notification counter size to adjust to its content
+[x] Add animation on like action
 [ ] Add random stories avatar
 [ ] Add likedBy feature
 

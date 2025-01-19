@@ -433,8 +433,10 @@ img {
     height: 24px;
 }
 
-.like-icon {
-    transform: scale(1);
+.like-icon.liked path {
+    fill: var(--notification-red);
+    stroke: var(--notification-red);
+    transition: all 0.1s ease
 }
 
 .like-icon.click-like-icon-animate svg {
@@ -481,12 +483,10 @@ img {
     }
 }
 
-.animation-expand {
-    transition: transform 200ms cubic-bezier(0.17, 0.17, 0, 1);
-}
-
-.animation-expand:active {
-    transform: scale(0.95);
+.save-post-icon.saved polygon {
+    fill: var(--primary-font-color);
+    stroke: var(--primary-font-color);
+    transition: all 0.1s ease
 }
 
 .menu {

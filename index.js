@@ -164,34 +164,6 @@ function renderPosts(posts) {
 
 renderPosts(posts)
 
-function setSvgIconColor(element, color) {
-  if (!hasChildElement(element, 'svg')) return
-  const svg = element.querySelector('svg')
-  const svgNodesWithStrokeOrFill = getSvgChildrenWithStrokeOrFill(svg)
-  svgNodesWithStrokeOrFill.forEach(child => {
-    child.setAttribute('fill', color)
-    child.setAttribute('stroke', color)
-  })
-}
-
-function removeSvgIconColor(element, color) {
-  if (!hasChildElement(element, 'svg')) return
-  const svg = element.querySelector('svg')
-  const svgNodesWithStrokeOrFill = getSvgChildrenWithStrokeOrFill(svg)
-  svgNodesWithStrokeOrFill.forEach(child => {
-    child.setAttribute('fill', 'none')
-    child.setAttribute('stroke', color)
-  })
-}
-
-function getSvgChildrenWithStrokeOrFill(svg) {
-  const children = Array.from(svg.querySelectorAll('*'))
-  const hasStrokeOrFill = children.filter(
-    child => child.hasAttribute('stroke') || child.hasAttribute('fill')
-  )
-  return hasStrokeOrFill
-}
-
 function hasChildElement(parent, childSelector) {
   return parent.querySelector(childSelector) !== null
 }
@@ -209,6 +181,7 @@ function doubleClickPostHandler() {
       const post = imgContainer.closest('.post')
       const likeIcon = post.querySelector('.like-icon')
       setLikeStatus(likeIcon)
+      triggerLikeAnimationOnPost(imgContainer)
     }
   })
 }
@@ -226,18 +199,40 @@ function likeIconClickHandler() {
 }
 
 function removeLikeStatus(likeIcon) {
-  removeSvgIconColor(likeIcon, 'currentColor')
   likeIcon.classList.remove('liked')
+  setLikeIconAnimation(likeIcon)
 }
 
 function setLikeStatus(likeIcon) {
-  setSvgIconColor(likeIcon, 'var(--notification-red)')
+  setLikeIconAnimation(likeIcon)
   likeIcon.classList.add('liked')
+}
+
+function setLikeIconAnimation(likeIcon) {
+  const isLiked = likeIcon.classList.contains('liked')
+
+  isLiked
+    ? triggerAnimation(likeIcon, 'click-like-icon-animate')
+    : triggerAnimation(likeIcon, 'dbclick-post-animate')
+}
+
+function triggerAnimation(element, animationClass) {
+  element.classList.remove(animationClass)
+  void element.offsetWidth
+  element.classList.add(animationClass)
+
+  element.addEventListener('animationend', () => {
+    element.classList.remove(animationClass)
+  })
+}
+
+function triggerLikeAnimationOnPost(postImage) {
+  const likeAnimation = postImage.querySelector('.like-heart')
+  triggerAnimation(likeAnimation, 'animate')
 }
 
 function savePostClickHandler() {
   document.addEventListener('click', event => {
-    console.log(event.target)
     const savePostIcon = event.target.closest('.save-post-icon')
 
     if (!savePostIcon) return
@@ -249,12 +244,10 @@ function savePostClickHandler() {
 }
 
 function removeSaveStatus(icon) {
-  removeSvgIconColor(icon, 'currentColor')
   icon.classList.remove('saved')
 }
 
 function setSaveStatus(icon) {
-  setSvgIconColor(icon, 'var(--primary-font-color)')
   icon.classList.add('saved')
 }
 
