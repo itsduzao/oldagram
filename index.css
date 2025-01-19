@@ -186,6 +186,28 @@ header {
     object-fit: cover;
 }
 
+.no-story-item {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 4px;
+    width: 80px;
+    height: 84px;
+    text-align: center;
+}
+
+.no-story-ring {
+    display: flex;
+    position: relative;
+    flex: 0 auto;
+    justify-content: center;
+    margin-block: 4px 8px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
 .user-info {
     display: flex;
     justify-content: space-between;
