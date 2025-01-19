@@ -12,8 +12,13 @@ Stretch goals
 [x] Add convert date to month dd, year.
 [x] Add fill save icon on click
 [x] Add story container
-[ ] Add no-story avatar
-[ ] Add plus icon to publish story
-[ ] Add user avatar notification
-[ ] Add dm notification counter
+[x] Add no-story avatar
+[x] Add plus icon to publish story
+[x] Add red circle over notification
+[x] Add dm notification counter
+
+[ ] Add animation on like action
+
+[ ] Add random stories avatar
+[ ] Add likedBy feature
 
