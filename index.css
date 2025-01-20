@@ -309,6 +309,10 @@ img {
     height: auto;
 }
 
+.post:last-child {
+    margin-bottom: 50px
+} 
+
 .post-image {
     position: relative;
     width: 375px;
@@ -494,6 +498,7 @@ img {
     bottom: 0;
     background-color: var(--primary-bg-color);
     height: fit-content;
+    width: 375px;
 }
 
 .menu-container {
@@ -503,12 +508,6 @@ img {
     align-items: center;
     border-top: 1px solid var(--primary-border-color);
     width: 100%;
-}
-
-@media screen and (max-width: 375px) {
-    .menu {
-        width: 100%;
-    }
 }
 
 .home-icon,
