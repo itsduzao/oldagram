@@ -491,6 +491,7 @@ img {
 
 .menu {
     position: sticky;
+    position: -webkit-sticky;
     bottom: 0;
     background-color: var(--primary-bg-color);
     height: fit-content;
