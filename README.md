@@ -18,8 +18,10 @@ Stretch goals
 [x] Add dm notification counter
 [x] Fix notification counter size to adjust to its content
 [x] Add animation on like action
-[ ] Add random stories avatar
+[x] Add random stories avatar
+
 [ ] Add likedBy feature
+
 [ ] Add responsive design
 [ ] Check aria props
 
