@@ -1,3 +1,6 @@
+import { renderStories } from '/components/stories/index.js'
+import { STORIES_DATA } from '/components/stories/STORIES_DATA.js'
+
 const posts = [
   {
     id: 'DELE_VGxNqM',
@@ -7,8 +10,8 @@ const posts = [
       id: 264723513,
       name: 'zundert',
     },
-    avatar: 'images/posts/avatar-vangogh.jpg',
-    post: 'images/posts/post-vangogh.jpg',
+    avatar: 'img/posts/avatar-vangogh.jpg',
+    post: 'img/posts/post-vangogh.jpg',
     caption: 'just took a few mushrooms lol',
     likedBy: ['theo1857', 'wil1862', 'breton1827'],
     date: '1889-08-09',
@@ -22,8 +25,8 @@ const posts = [
       id: 234319907,
       name: 'Ornans',
     },
-    avatar: 'images/posts/avatar-courbet.jpg',
-    post: 'images/posts/post-courbet.jpg',
+    avatar: 'img/posts/avatar-courbet.jpg',
+    post: 'img/posts/post-courbet.jpg',
     caption: "i'm feelin a bit stressed tbh",
     likedBy: ['baudelaire1821', 'bruyas1821', 'champfleury1821'],
     date: '1845-07-13',
@@ -37,8 +40,8 @@ const posts = [
       id: 6889842,
       name: 'paris',
     },
-    avatar: 'images/posts/avatar-ducreux.jpg',
-    post: 'images/posts/post-ducreux.jpg',
+    avatar: 'img/posts/avatar-ducreux.jpg',
+    post: 'img/posts/post-ducreux.jpg',
     caption:
       'gm friends! which coin are YOU stacking up today?? post below and WAGMI!',
     likedBy: ['david1748', 'mehul1763', 'decreux1761'],
@@ -46,6 +49,8 @@ const posts = [
     commentsCount: 142,
   },
 ]
+
+renderStories(STORIES_DATA)
 
 function createPostElement(data) {
   const {
