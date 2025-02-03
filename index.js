@@ -293,5 +293,3 @@ function formatDateAsMonthDayYear(date) {
   return formattedDate
 }
 
-// 2023-11-08 -> November 8, 2023
-
