@@ -20,4 +20,6 @@ Stretch goals
 [x] Add animation on like action
 [ ] Add random stories avatar
 [ ] Add likedBy feature
+[ ] Add responsive design
+[ ] Check aria props
 
