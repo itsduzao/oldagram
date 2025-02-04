@@ -20,9 +20,6 @@ Stretch goals
 [x] Add animation on like action
 [x] Add random stories avatar
 [x] Add likedBy feature
-
-[ ] Add responsive design (630px container, 470px max post size)
-
-[ ] Disable x scroll bar for stories on chrome
-[ ] Check aria props
+[x] Add responsive design (630px container, 470px max post size)
+[x] Check aria props
 

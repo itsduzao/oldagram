@@ -82,14 +82,14 @@ function createPostElement(data) {
   )}</a>
                     </div>
                 </div>
-                <div class="three-dots-icon primary-font-color interaction-opacity pointer" tabindex="0">
+                <button class="three-dots-icon primary-font-color interaction-opacity pointer btn-no-decoration">
                     <svg role="img" aria-labelledby="three-dots-icon-title" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                         <title id="three-dots-icon-title">More Options</title>
                         <circle cx="12" cy="5" r="2"></circle>
                         <circle cx="12" cy="12" r="2"></circle>
                         <circle cx="12" cy="19" r="2"></circle>
                     </svg>
-            </div>
+            </button>
             </section>
             <section class="post-image">
                 <img src="${post}" alt="Post by ${username}">
@@ -102,7 +102,7 @@ function createPostElement(data) {
             <section class="post-body">
                 <div class="icons-container">
                     <div class="icons-wrapper">
-                        <div class="like-icon primary-font-color interaction-opacity pointer" tabindex="0">
+                        <button class="like-icon primary-font-color interaction-opacity pointer btn-no-decoration">
                             <svg role="img" aria-labelledby="like-icon-title" width="24" height="24" viewBox="0 0 27 25"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <title id="like-icon-title">Like</title>
@@ -110,8 +110,8 @@ function createPostElement(data) {
                                     d="M3.84587 13.5811L12.7963 23.2159C13.2572 23.712 14.0424 23.712 14.5033 23.2159L23.4537 13.5811C25.9149 10.9318 25.9149 6.63634 23.4537 3.987C20.9926 1.33767 17.0022 1.33767 14.5411 3.987L14.5033 4.02764C14.0424 4.52375 13.2572 4.52375 12.7963 4.02764L12.7585 3.987C10.2974 1.33767 6.30704 1.33767 3.84587 3.987C1.38471 6.63634 1.38471 10.9318 3.84587 13.5811Z"
                                     stroke="currentcolor" stroke-width="2.32996" />
                             </svg>
-                        </div>
-                        <div class="comment-icon-and-count comment-icon primary-font-color interaction-opacity pointer" tabindex="0">
+                        </button>
+                        <button class="comment-icon-and-count comment-icon primary-font-color interaction-opacity pointer btn-no-decoration">
                             <svg aria-labelledby="comment-icon-title" fill="currentColor" height="24" role="img"
                                 viewBox="0 0 24 24" width="24">
                                 <title id="comment-icon-title">Comment</title>
@@ -119,8 +119,8 @@ function createPostElement(data) {
                                     stroke-linejoin="round" stroke-width="2"></path>
                             </svg>
                             <span class="comments-count ss-bold">${commentsCount}</span>
-                        </div>
-                        <div class="share-icon primary-font-color interaction-opacity pointer" tabindex="0">
+                        </button>
+                        <button class="share-icon primary-font-color interaction-opacity pointer btn-no-decoration">
                             <svg aria-labelledby="share-icon-title" width="24" height="24" viewBox="0 0 24 21" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <title id="share-icon-title">Share</title>
@@ -128,17 +128,17 @@ function createPostElement(data) {
                                     d="M9.65797 9.54347L11.8283 19.3097C11.9424 19.8236 12.6255 19.9344 12.8964 19.4831L22.8075 2.96445C23.0405 2.57621 22.7608 2.08228 22.308 2.08228H2.52787C1.98708 2.08228 1.73819 2.75508 2.14879 3.10702L9.65797 9.54347ZM9.65797 9.54347L22.0933 2.70404"
                                     stroke="currentcolor" stroke-width="2.32996" />
                             </svg>
-                        </div>
+                        </button>
                     </div>
                     <div class="save-post-container">
-                        <div class="primary-font-color save-post-icon interaction-opacity pointer" tabindex="0">
+                        <button class="primary-font-color save-post-icon interaction-opacity pointer btn-no-decoration">
                             <svg aria-labelledby="save-post-icon-title" fill="currentColor" height="24" role="img"
                                 viewBox="0 0 24 24" width="24">
                                 <title id="save-post-icon-title">Save</title>
                                 <polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor"
                                     stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
                             </svg>
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <div class="likedby-container ss-normal text-normal m-0 primary-font-color"></div>
@@ -148,9 +148,9 @@ function createPostElement(data) {
                     </p>
                 </div>
                 <div class="post-date-container">
-                    <time datetime="${date}" class="post-date secondary-font-color ss-normal text-small date-letter-spacing">${formatDateAsMonthDayYear(
+                    <a href="/${username}/p/${id}" class="txt-decoration-none pointer"><time datetime="${date}" class="post-date secondary-font-color ss-normal text-small date-letter-spacing">${formatDateAsMonthDayYear(
     date
-  )}</time>
+  )}</time></a>
                 </div>
             </section>`
 
