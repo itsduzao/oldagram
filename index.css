@@ -154,6 +154,7 @@ header {
 
 .direct-message-counter span {
     padding: 3px 5px;
+    color: white;
     font-size: .6875rem;
     line-height: 18px;
 }
