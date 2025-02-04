@@ -22,4 +22,5 @@ Stretch goals
 [x] Add likedBy feature
 [x] Add responsive design (630px container, 470px max post size)
 [x] Check aria props
+[x] Create favicon
 
