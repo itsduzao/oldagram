@@ -1,4 +1,4 @@
-import { createPostElement } from './components/posts/createPostElement.js'
+import { createPostElement } from './createPostElement.js'
 
 export function renderPosts(posts) {
   const postContainer = document.getElementById('post-container')
