@@ -1,5 +1,5 @@
-import { createStoryElement } from '/components/stories/createStoryElement.js'
-import { createUserStoryElement } from '/components/stories/createUserStoryElement.js'
+import { createStoryElement } from './createStoryElement.js'
+import { createUserStoryElement } from './createUserStoryElement.js'
 
 export function renderStories(storyData) {
   const storiesSection = document.querySelector('section.stories')
