@@ -80,6 +80,11 @@ body {
     width: 100%;
 }
 
+.app-container {
+    margin: 0 auto;
+    max-width: clamp(250px, 100%, 630px);
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -155,8 +160,8 @@ header {
     border-bottom: 1px solid var(--primary-border-color);
     padding: 8px 0;
     max-width: 630px;
-    height: 84px;
-    max-height: 84px;
+    height: 86px;
+    max-height: 86px;
     overflow: hidden;
 }
 
@@ -168,6 +173,19 @@ header {
     width: 100%;
     height: 100%;
     overflow: auto hidden;
+    scrollbar-gutter: stable;
+
+    &::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
 }
 
 .stories-wrapper {
@@ -317,7 +335,10 @@ img {
 
 .post-image {
     position: relative;
-    width: 375px;
+    transition: width 0.3s ease-in-out;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 375px;
     height: auto;
     user-select: none;
 }
@@ -496,21 +517,35 @@ img {
 }
 
 .menu {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu-fixed {
     position: fixed;
     bottom: 0;
-    box-sizing: content-box;
+    left: 0;
     background-color: var(--primary-bg-color);
     width: 100%;
-    height: fit-content;
+    pointer-events: none;
 }
 
 .menu-container {
     display: flex;
-    position: relative;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
     border-top: 1px solid var(--primary-border-color);
     width: 100%;
+    height: fit-content;
+}
+
+.menu-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: content-box;
+    width: clamp(250px, 100%, 630px);
 }
 
 .home-icon,
@@ -523,6 +558,7 @@ img {
     align-items: center;
     width: 48px;
     height: 48px;
+    pointer-events: all;
 }
 
 .app-user-avatar {
@@ -546,5 +582,9 @@ img {
     .post,
     .post-image {
         width: 100%;
+    }
+
+    .menu-wrapper {
+        justify-content: space-evenly;
     }
 }
